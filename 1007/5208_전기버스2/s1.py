@@ -12,9 +12,10 @@ def min_count(numbers, now=1, charged=0):
     # 도착 했는지 확인
     if now >= N:
         # charged 가 answer 보다 작은지 확인
+        # 맨 마지막 정류소에 도착 후 이동하는데
+        charged -= 1
         if charged <= answer:
-            # 1은 맨 처음 정류소는 제외하므로 뺐다.
-            answer = charged - 1
+            answer = charged
         return
 
     # 현재 위치에서 이동 가능 용량
